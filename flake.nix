@@ -17,10 +17,8 @@
           ./configuration.nix # Your main configuration.nix
           ./hardware-configuration.nix # Add other modules here if you have them, e.g., hardware-configuration.nix
           sops-nix.nixosModules.sops
+          bonfire-nix.nixosModules.bonfire
         ];
-        specialArgs = {
-          inherit bonfire-nix; # Pass bonfire-nix input to configuration.nix
-        };
       };
     };
 }
