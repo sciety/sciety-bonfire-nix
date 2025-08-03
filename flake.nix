@@ -4,13 +4,13 @@
   inputs = {
     # NixOS official package source, using the nixos-25.05 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    bonfire-app.url = "github:bonfire-networks/bonfire-app/main"; # Or a specific tag/commit
+    bonfire-nix.url = "github:bonfire-networks/bonfire-nix/main"; # Or a specific tag/commit
     flake-utils.url = "github:numtide/flake-utils";
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, bonfire-app, flake-utils, sops-nix, ... }@inputs: {
+  outputs = { self, nixpkgs, bonfire-nix, flake-utils, sops-nix, ... }@inputs: {
       nixosConfigurations.nixos-vm = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -19,7 +19,7 @@
           sops-nix.nixosModules.sops
         ];
         specialArgs = {
-          inherit bonfire-app; # Pass bonfire-app input to configuration.nix
+          inherit bonfire-nix; # Pass bonfire-nix input to configuration.nix
         };
       };
     };
