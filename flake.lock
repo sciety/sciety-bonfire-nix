@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1754256939,
-        "narHash": "sha256-1eXBWuVLPRFm5TN0+1M//EqdsNaprKPZwBafZ8fLCEo=",
+        "lastModified": 1754260931,
+        "narHash": "sha256-j4n10pIrKkCglN/VIFMean5Uv6KmpxKyxIsxhQ34M7k=",
         "owner": "bonfire-networks",
         "repo": "bonfire-nix",
-        "rev": "05f418888505b191d2bf509790aad43f1663d1ce",
+        "rev": "cda65c02bfd28c61a259c286f839ad8784574917",
         "type": "github"
       },
       "original": {
@@ -55,11 +55,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1750400657,
-        "narHash": "sha256-3vkjFnxCOP6vm5Pm13wC/Zy6/VYgei/I/2DWgW4RFeA=",
+        "lastModified": 1754028485,
+        "narHash": "sha256-IiiXB3BDTi6UqzAZcf2S797hWEPCRZOwyNThJIYhUfk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b2485d56967598da068b5a6946dadda8bfcbcd37",
+        "rev": "59e69648d345d6e8fef86158c555730fa12af9de",
         "type": "github"
       },
       "original": {
