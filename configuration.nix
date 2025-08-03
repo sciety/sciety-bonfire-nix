@@ -22,7 +22,7 @@
    };
   };
 
-  bonfire.flavor = {};
+  bonfire.flavor = "sciety";
 
   # This will add hetzner.yml to the nix store
   # You can avoid this by adding a string to the full path instead, i.e.
