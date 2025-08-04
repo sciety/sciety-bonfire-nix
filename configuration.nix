@@ -158,13 +158,5 @@
     initialPassword = "test";
   };
 
-  users.users.bonfire = {
-    isSystemUser = true;
-    home = "/var/lib/bonfire";
-    createHome = true;
-    group = "bonfire";
-  };
-  users.groups.bonfire = {};
-
   system.stateVersion = "23.11";
 }
