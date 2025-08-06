@@ -3,6 +3,7 @@
 {
   imports =
     [
+    ./disk-config.nix
     ./hardware-configuration.nix
     ];
 
@@ -18,7 +19,10 @@
     enable = true;
     version = 2;
     forceInstall = true;
-    device = "/dev/sda";
+    efiSupport = true;
+    efiInstallAsRemovable = true;
+    # no need to set devices, disko will add all devices that have a EF02 partition to the list already
+    # devices = [ ];
    };
   };
 

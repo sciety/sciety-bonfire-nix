@@ -19,6 +19,26 @@
         "type": "github"
       }
     },
+    "disko": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753140376,
+        "narHash": "sha256-7lrVrE0jSvZHrxEzvnfHFE/Wkk9DDqb+mYCodI5uuB8=",
+        "owner": "nix-community",
+        "repo": "disko",
+        "rev": "545aba02960caa78a31bd9a8709a0ad4b6320a5c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "disko",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -34,6 +54,21 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixos-facter-modules": {
+      "locked": {
+        "lastModified": 1750412875,
+        "narHash": "sha256-uP9Xxw5XcFwjX9lNoYRpybOnIIe1BHfZu5vJnnPg3Jc=",
+        "owner": "numtide",
+        "repo": "nixos-facter-modules",
+        "rev": "14df13c84552a7d1f33c1cd18336128fbc43f920",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "nixos-facter-modules",
         "type": "github"
       }
     },
@@ -72,7 +107,9 @@
     "root": {
       "inputs": {
         "bonfire-nix": "bonfire-nix",
+        "disko": "disko",
         "flake-utils": "flake-utils",
+        "nixos-facter-modules": "nixos-facter-modules",
         "nixpkgs": "nixpkgs_2",
         "sops-nix": "sops-nix"
       }
