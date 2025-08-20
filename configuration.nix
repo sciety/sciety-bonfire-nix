@@ -147,6 +147,7 @@
 
   users.users.giacomo.openssh.authorizedKeys.keys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDPLo9gQ9VwhKuaBSL84liznZT1Eov71DkcKqZFJZKgfgo+Lug4mf03WTrp5/BJEYuPjj4P4RAkakX/5NjHf7ypBr+sBBo02HH5AgJB2GRhcDVJTiJwaG7ghl5kN+lDk+yD5YWckSVHgMVmukEtEf5P4EH4bRfIBaF76md1qt5cG6/NXGDpvkTE1y+40OdjI6dj1/4StktaQiqPI09zPMFbJewxR2Npiua5q1PDXSi677JAeO2FMv16wJpaJXczkSwuQIv5sf3/DgYi/ZpAuzdm4+nlj/1xKTH0fVAdP+gfwDKiOIuIYqjata2+MHgVkkJyIGlgOmTZPWRY1VuooAWdIAKZajpNX5sGePD1tzuO9yOiKTJkq2Q3W3V7xFRFEhAjMUid3/5Q9HZ7Ymms+4lz1tRu9aJj8hKVdiL70L6Qk2zi7uGgbZaKym69B5O3qyDcMT/bX/83pEhL9tQ2WsSwQD7ISPgw1V8+iKgh76I0IBkNT3tUiXeD+EYjutSCYXSajdfk4eMfuNgA+HMZKEyMhfta+SxfRObGgHhusjiiuhn5Tak2vbLf1DG8+2cJE8LTHtWhm5PBgBsTQS5EPVh5HONRy2Ya+KTzNMOskmkT/FZESKNuCWqb+GOEmx2VXzC0xW/GBnDiEfwxV3olcHOrX88JeBbzRTDcovfWUJzKZQ== goodoldpaul@autistici.org"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIySsOgdceI/vD3dpY9NfViA25SU71jn0Y6rPMmNbJgv goodoldpaul@autistici.org"
   ];
 
   users.users.mark = {
