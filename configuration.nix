@@ -6,7 +6,7 @@
     ./hardware-configuration.nix
     ];
 
-  nix.settings.experimental-features =["nix-command" "flakes"];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   time.timeZone = "europe/london";
 
@@ -25,6 +25,7 @@
   bonfire = {
     flavor = "social";
     version = "1.0.0-rc.2.3";
+    hostname = "168.119.178.113";
   };
 
   # This will add hetzner.yml to the nix store
@@ -42,63 +43,9 @@
   sops.age.generateKey = false;
 
   # This is the actual specification of the secrets.
-  sops.secrets.meilisearch = {};
-
-  virtualisation.docker = {
-   enable = true;
-  };
-
-  virtualisation.oci-containers = {
-    # backend defaults to "podman"
-    backend = "docker";
-    containers = {
-      bonfire = {
-        image = "docker.io/bonfirenetworks/bonfire:1.0.0-rc.2.1-social-amd64";
-        # We connect everything to the host network,
-        # this way we can use Nix provides services
-        # such as Postgres.
-        networks = [ "host" ];
-        volumes = [ "/var/lib/bonfire/uploads:/opt/app/data/uploads" ];
-        environment = {
-          # DB settings
-          POSTGRES_DB = "bonfire";
-          POSTGRES_USER = "bonfire";
-          POSTGRES_HOST = "localhost";
-          # Mail settings
-          # MAIL_DOMAIN = "FQDN";
-          # MAIL_FROM = "name@FQDN";
-          # MAIL_BACKEND = "backend";
-          # MAIL_PORT = "465";
-          # MAIL_SSL = "true";
-          # Instance settings
-          SEARCH_MEILI_INSTANCE = "http://localhost:7700";
-          FLAVOUR = "social";
-          PORT = "4000";
-          SERVER_PORT = "4000";
-          PUBLIC_PORT = "443";
-          # HOSTNAME = "FQDN";
-          # Technical settings
-          SEEDS_USER = "root";
-          MIX_ENV = "prod";
-          PLUG_BACKEND = "bandit";
-          APP_NAME = "Bonfire";
-          ERLANG_COOKIE = "bonfire_cookie";
-        };
-      };
-      meilisearch = {
-        image = "docker.io/getmeili/meilisearch:v1.14";
-        # We connect everything to the host network,
-        # this way we can use Nix provides services
-        # such as Postgres.
-        networks = [ "host" ];
-        volumes = [ "/var/lib/meilisearch/meili_data:/meili_data" "/var/lib/meilisearch/data.ms:/data.ms" ];
-        environment = {
-          # Disable telemetry
-          MEILI_NO_ANALYTICS = "true";
-        };
-      };
-    };
-  };
+  sops.secrets.bonfire.secret_key_base = {};
+  sops.secrets.bonfire.signing_salt = {};
+  sops.secrets.bonfire.encryption_salt = {};
 
   networking = {
    hostName = "nixos-vm";
@@ -110,8 +57,8 @@
 
   firewall = {
    enable = true;
-   allowedTCPPorts =[];
-   allowedUDPPorts =[];
+   allowedTCPPorts = [ "80" "443" ];
+   allowedUDPPorts = [];
    };
   };
 
