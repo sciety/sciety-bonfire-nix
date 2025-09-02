@@ -49,6 +49,39 @@
   sops.secrets."bonfire/signing_salt" = {};
   sops.secrets."bonfire/encryption_salt" = {};
 
+  security.acme.acceptTerms = true;
+  security.acme.defaults.email = "bonfire-admin@sciety.org";
+  services.nginx = {
+    enable = true;
+    virtualHosts = {
+      "dev-discussions.sciety.org" = {
+        forceSSL = true;
+        enableACME = true;
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:4000";
+          extraConfig =
+            # Taken from https://www.nginx.com/resources/wiki/start/topics/examples/full/
+            # Those settings are used when proxies are involved
+            "proxy_redirect          off;" +
+            "proxy_set_header        Host $host;" +
+            "proxy_set_header        X-Real-IP $remote_addr;" +
+            "proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;" +
+            "proxy_http_version      1.1;" +
+            "proxy_cache_bypass      $http_upgrade;" +
+            "proxy_set_header        Upgrade $http_upgrade;" +
+            "proxy_set_header        Connection \"upgrade\";" +
+            "proxy_set_header        X-Forwarded-Proto $scheme;" +
+            "proxy_set_header        X-Forwarded-Host  $host;";
+        };
+      };
+    };
+  };
+
+  systemd.services.docker-bonfire = {
+    requires = [ "docker-bonfire.service" ];
+    after = [ "docker-bonfire.service" ];
+  };
+
   networking = {
    hostName = "nixos-vm";
    useDHCP = false;
