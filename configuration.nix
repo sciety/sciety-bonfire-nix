@@ -43,6 +43,7 @@
   sops.age.generateKey = false;
 
   # This is the actual specification of the secrets.
+  sops.secrets."bonfire/mail_key" = {};
   sops.secrets."bonfire/secret_key_base" = {};
   sops.secrets."bonfire/signing_salt" = {};
   sops.secrets."bonfire/encryption_salt" = {};
