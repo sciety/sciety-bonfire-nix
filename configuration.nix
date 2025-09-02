@@ -25,7 +25,7 @@
   bonfire = {
     flavor = "social";
     version = "1.0.0-rc.2.3";
-    hostname = "168.119.178.113";
+    hostname = "dev-discussions.sciety.org";
     mail-from = "bonfire-admin@sciety.org";
   };
 
