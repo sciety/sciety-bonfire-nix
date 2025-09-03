@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1756934343,
-        "narHash": "sha256-HB756Fh6K4s6vdwTUiWeqWHA/Fj/I9Sg9BMMwj0THp8=",
+        "lastModified": 1756934613,
+        "narHash": "sha256-YFSqFv/m01y33QKjEcGNx+wCBXrohCHiqdBpPQf1UgI=",
         "owner": "bonfire-networks",
         "repo": "bonfire-nix",
-        "rev": "c1d4cb19177bb57b7e1d75cb0681022a26ee1987",
+        "rev": "5087c3f49977c65369296f4eff7d7b0507cc3c84",
         "type": "github"
       },
       "original": {
