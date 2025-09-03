@@ -49,6 +49,10 @@
   sops.secrets."bonfire/secret_key_base" = {};
   sops.secrets."bonfire/signing_salt" = {};
   sops.secrets."bonfire/encryption_salt" = {};
+  sops.secrets."bonfire/postgres_password" = {
+    mode = "0440";
+    group = config.users.users.postgres.group;
+  };
 
   security.acme.acceptTerms = true;
   security.acme.defaults.email = "bonfire-admin@sciety.org";
