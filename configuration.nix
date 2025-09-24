@@ -82,11 +82,6 @@
     };
   };
 
-  systemd.services.docker-bonfire = {
-    requires = [ "docker-bonfire.service" ];
-    after = [ "docker-bonfire.service" ];
-  };
-
   networking = {
    hostName = "nixos-vm";
    useDHCP = false;
