@@ -28,6 +28,7 @@
     hostname = "dev-discussions.sciety.org";
     mail-from = "bonfire-admin@sciety.org";
     mail-backend = "sendgrid";
+    mail-key = "/run/secrets/bonfire/mail_key";
   };
 
   # This will add hetzner.yml to the nix store
