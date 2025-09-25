@@ -112,6 +112,7 @@
   environment.systemPackages = with pkgs; [
     git
     ncdu
+    ripgrep
     vim
   ];
 
