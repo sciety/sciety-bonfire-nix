@@ -23,8 +23,8 @@
   };
 
   bonfire = {
-    flavor = "social";
-    version = "1.0.0-rc.2.3";
+    flavor = "open_science";
+    version = "1.0.0-rc.2.23";
     hostname = "dev-discussions.sciety.org";
     mail-from = "bonfire-admin@sciety.org";
     mail-backend = "sendgrid";
