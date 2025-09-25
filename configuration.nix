@@ -111,6 +111,7 @@
 
   environment.systemPackages = with pkgs; [
     git
+    ncdu
     vim
   ];
 
