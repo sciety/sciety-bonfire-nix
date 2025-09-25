@@ -29,6 +29,8 @@
     mail-from = "bonfire-admin@sciety.org";
     mail-backend = "sendgrid";
     mail-key = "/run/secrets/bonfire/mail_key";
+    meili-master-key = "/run/secrets/bonfire/meili_master_key";
+    meilisearch-tag = "v1.14";
   };
 
   # This will add hetzner.yml to the nix store
@@ -47,6 +49,7 @@
 
   # This is the actual specification of the secrets.
   sops.secrets."bonfire/mail_key" = {};
+  sops.secrets."bonfire/meili_master_key" = {};
   sops.secrets."bonfire/secret_key_base" = {};
   sops.secrets."bonfire/signing_salt" = {};
   sops.secrets."bonfire/encryption_salt" = {};
