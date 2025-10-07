@@ -24,7 +24,7 @@
 
   bonfire = {
     flavor = "open_science";
-    version = "1.0.0-rc.2.33";
+    version = "1.0.0-rc.3";
     hostname = "dev-discussions.sciety.org";
     mail-from = "bonfire-admin@sciety.org";
     mail-backend = "sendgrid";
