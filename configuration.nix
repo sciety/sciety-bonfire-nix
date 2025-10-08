@@ -5,6 +5,7 @@
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
     ./hardware-configuration.nix
+    ./disk-config.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -13,7 +14,7 @@
 
   boot = {
    kernelPackages = pkgs.linuxPackages_6_1;
-   supportedFilesystems = [ "btrfs"];
+   supportedFilesystems = [ "ext4"];
 
    loader.grub = {
     # no need to set devices, disko will add all devices that have a EF02 partition to the list already
@@ -26,7 +27,7 @@
   bonfire = {
     flavor = "open_science";
     version = "1.0.0-rc.3";
-    hostname = "dev-discussions.sciety.org";
+    hostname = "104.248.34.86";
     mail-from = "bonfire-admin@sciety.org";
     mail-backend = "sendgrid";
     mail-key = "/run/secrets/bonfire/mail_key";
