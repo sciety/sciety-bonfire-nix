@@ -15,11 +15,11 @@
    supportedFilesystems = [ "btrfs"];
 
    loader.grub = {
-    enable = true;
-    version = 2;
-    forceInstall = true;
-    device = "/dev/sda";
-   };
+    # no need to set devices, disko will add all devices that have a EF02 partition to the list already
+    # devices = [ ];
+    efiSupport = true;
+    efiInstallAsRemovable = true;
+  };
   };
 
   bonfire = {
@@ -118,8 +118,10 @@
 
   services.openssh = {
     enable = true;
-    permitRootLogin = "yes";
-    passwordAuthentication = false;
+    settings = {
+      permitRootLogin = "yes";
+      passwordAuthentication = false;
+    };
   };
 
   services.fail2ban.enable = true;
